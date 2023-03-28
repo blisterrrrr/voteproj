@@ -1,0 +1,52 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Vote;
+
+class VoteController extends Controller
+{
+    public function showAll()
+    {
+        $votes = Vote::all();
+        return view('index', ['votes' => $votes]);
+    }
+
+    public function create()
+    {
+        $data = request()->validate([
+            'title' => 'string',
+            'text' => 'string'
+        ]);
+        $data['positive'] = 0;
+        $data['negative'] = 0;
+        Vote::create($data);
+        return redirect('/');
+    }
+
+    public function show($id)
+    {
+        $vote = Vote::findOrFail($id);
+        return view('show_vote', ['vote' => $vote]);
+    }
+
+    public function incPos($id)
+    {
+        $vote = Vote::findOrFail($id);
+
+        $vote->positive++;
+        $vote->save();
+
+        return back();
+    }
+
+    public function incNeg($id)
+    {
+        $vote = Vote::findOrFail($id);
+
+        $vote->negative++;
+        $vote->save();
+
+        return back();
+    }
+}
