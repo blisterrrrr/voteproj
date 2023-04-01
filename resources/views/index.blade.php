@@ -73,7 +73,7 @@
         @endforeach
     </div>
     <div class="w-100 align-content-center ">
-        {{$votes->links()}}
+        {{$votes->onEachSide(2)->links()}}
     </div>
 </main>
 <!-- КОНЕЦ: Основное содержимое страницы -->
