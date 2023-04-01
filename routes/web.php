@@ -19,7 +19,7 @@ Route::get('/', [VoteController::class, 'index']);
 Route::get('/vote/create', function () {
     return view('create_vote');
 })->name('vote.create');
-Route::post('vote/create', [VoteController::class, 'store']);
+Route::post('vote/create', [VoteController::class, 'store'])->name('vote.store');
 Route::get('/vote/show/{id}', [VoteController::class, 'show'])->name('vote.show');
 Route::get('/vote/positive_inc/{id}', [VoteController::class, 'incPos'])->name('vote.pos');
 Route::get('/vote/negative_inc/{id}', [VoteController::class, 'incNeg'])->name('vote.neg');
