@@ -51,7 +51,7 @@
 			<h1>Открыть голосование</h1>
 			<hr class="mb-4">
 
-			<form method="POST">
+			<form method="POST" action="{{ route('vote.create') }}">
                 @csrf
 				<div class="form-group">
 					<label>Заголовок</label>

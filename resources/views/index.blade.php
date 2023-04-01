@@ -22,7 +22,7 @@
         <!-- Навигация из 1 элемента "Открыть голосование"  -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/vote/create">Открыть голосование</a>
+                <a class="nav-link" href="{{route("vote.create")}}">Открыть голосование</a>
             </li>
         </ul>
     </div>
@@ -66,11 +66,14 @@
 						</span>
                     </a>
                 </div>
-                
+
                 <!-- КОНЕЦ: Тело карточки -->
             </div>
             <!-- КОНЕЦ: Карточка голосования -------------------------------------->
         @endforeach
+    </div>
+    <div class="w-100 align-content-center ">
+        {{$votes->links()}}
     </div>
 </main>
 <!-- КОНЕЦ: Основное содержимое страницы -->

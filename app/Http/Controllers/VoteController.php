@@ -6,13 +6,13 @@ use App\Models\Vote;
 
 class VoteController extends Controller
 {
-    public function showAll()
+    public function index()
     {
-        $votes = Vote::all();
+        $votes = Vote::orderByDesc('id')->paginate(5);
         return view('index', ['votes' => $votes]);
     }
 
-    public function create()
+    public function store()
     {
         $data = request()->validate([
             'title' => 'string',
