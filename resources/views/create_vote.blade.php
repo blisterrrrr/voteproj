@@ -57,6 +57,10 @@
 					<label>Заголовок</label>
 					<input type="text" class="form-control" name="title">
 				</div>
+                <div class="form-group">
+                    <label>Превью</label>
+                    <input type="file" class="form-control" name="img">
+                </div>
 				<div class="form-group">
 					<label>Текст описания</label>
 					<textarea class="form-control" rows="5" name="text"></textarea>

@@ -16,7 +16,8 @@ class VoteController extends Controller
     {
         $data = request()->validate([
             'title' => 'string',
-            'text' => 'string'
+            'text' => 'string',
+            'img' => 'string'
         ]);
         $data['positive'] = 0;
         $data['negative'] = 0;

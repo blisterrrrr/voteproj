@@ -11,6 +11,7 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->text('text');
+            $table->string('img')->nullable();
             $table->integer('positive');
             $table->integer('negative');
             $table->timestamps();

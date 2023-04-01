@@ -49,6 +49,7 @@
     <div class="container">
 
         <h1>{{$vote->title}}</h1>
+        <img src="{{$vote->img}}">
         <hr>
 
         <!-- НАЧАЛО: Панель кнопочек -->
