@@ -49,7 +49,7 @@
     <div class="container">
 
         <h1>{{$vote->title}}</h1>
-        <img src="{{$vote->img}}">
+        <img src="{{ asset('storage/' . $vote->img) }}">
         <hr>
 
         <!-- НАЧАЛО: Панель кнопочек -->

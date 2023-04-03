@@ -17,10 +17,11 @@ class VoteController extends Controller
         $data = request()->validate([
             'title' => 'string',
             'text' => 'string',
-            'img' => 'nullable|string'
+            'img' => 'nullable|file'
         ]);
         $data['positive'] = 0;
         $data['negative'] = 0;
+        $data['img'] = request()->file('img')->store('img', 'public');
         Vote::create($data);
         return redirect('/');
     }

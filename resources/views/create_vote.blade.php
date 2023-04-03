@@ -51,7 +51,7 @@
 			<h1>Открыть голосование</h1>
 			<hr class="mb-4">
 
-			<form method="POST" action="{{ route('vote.store') }}">
+			<form method="POST" action="{{ route('vote.store') }}" enctype="multipart/form-data">
                 @csrf
 				<div class="form-group">
 					<label>Заголовок</label>
