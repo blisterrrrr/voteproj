@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vote;
+use Illuminate\Http\RedirectResponse;
 
 class VoteController extends Controller
 {
@@ -34,7 +35,7 @@ class VoteController extends Controller
         return view('show_vote', ['vote' => $vote]);
     }
 
-    public function incPos($id)
+    public function incPos($id): RedirectResponse
     {
         $vote = Vote::findOrFail($id);
 
@@ -44,7 +45,7 @@ class VoteController extends Controller
         return back();
     }
 
-    public function incNeg($id)
+    public function incNeg($id): RedirectResponse
     {
         $vote = Vote::findOrFail($id);
 

@@ -14,6 +14,7 @@ class VoteFactory extends Factory
         return [
             'title' => fake()->title(),
             'text' => fake()->text(128),
+            'img' => fake()->imageUrl(),
             'positive' => rand(0, 132),
             'negative' => rand(0, 132)
         ];
